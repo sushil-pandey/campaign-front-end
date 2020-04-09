@@ -1,0 +1,65 @@
+<table>
+  <thead class="table-success">
+
+    <div class="col-md-6 ">
+     
+         
+            <input   type="text" [(ngModel)]="search" (change)="searchFilter($event)" >
+            
+         
+      
+    </div>
+    <!-- <div class="col-md-6 text-right  marginMobileBtm marginbottom25 width50">
+      <button type="button" class="btn btn-default btnglobal dspFontFamily" (click)="downloadCSV(campaignsShowList)">
+        Export
+      </button>
+    </div> -->
+    <!-- <div class="container">    
+      <button (click)="exportAsXLSX()" class="btn btn-info mb-4 mt-2">Download Excel</button> 
+      </div> -->
+    <tr>
+     
+      <th scope="col"> Camapign Name</th>
+      <!-- <th scope="col">Status</th> -->
+    
+      <th scope="col">Start Date</th>
+      <th scope="col">End date</th>
+      <th scope="col">Budget</th>
+      <th scope="col">Impression</th>
+      <!-- <th scope="col">VTR</th> -->
+      <th>action</th>
+
+     
+    </tr>
+  </thead>
+   <tbody> 
+    <tr *ngFor="let employee of campaign; let i = index" >
+    
+       <td>{{employee.name}}
+      
+      <td>{{employee.stdate}}</td>  
+      <td>{{employee.eddate}}</td>
+      <td>{{employee.tbudget}}</td>
+      <td>{{employee.timp}}</td>
+      <!-- <td>{{employee.Views}}</td> -->
+      <!-- <td>{{employee.VTR}}</td> --> 
+      
+     <button type="button" class="btn btn-danger btn-sm" (click)="delete(employee)">Delete</button>
+     <button type="button" class="btn btn-primary btn-sm" (click)= "replicate(employee)" >copy </button> 
+
+     
+     <button type="button" class="btn btn-success btn-sm" (click)="updaterecord(employee)">update </button> 
+     
+
+     
+      <!-- <td class="text-center edit-block">
+        
+          <button type="button" class="btn btn-success btn-sm">Edit</button>
+        </span>
+        <span class="delete" (click)="removeEmployee(employee, i)">
+          <button type="button" class="btn btn-danger btn-sm">Delete</button>
+        </span>
+      </td> -->
+    <!-- </tr>
+  </tbody> -->
+</table>

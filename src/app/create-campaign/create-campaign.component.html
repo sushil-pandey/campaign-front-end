@@ -1,0 +1,100 @@
+<form [formGroup]="CreateCampaignFrom" (ngSubmit)="onSubmit()">
+<div class="form-group">
+    <label for="inputName">Campaign Name</label>
+    <input class="form-control" type="text" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="inputName">Total impression</label>
+        <input class="form-control" type="number" formControlName="timp">
+        </div>  
+
+        <div class="form-group">
+            <label for="inputName">Select date</label>
+            <input type="number" ngbDatepicker formControlName="campdate" > -->
+            <!-- <angular2-date-picker [(ngModel)]="date" [settings]="settings"></angular2-date-picker> -->
+            <!-- <input class="form-control" type="text" formControlName="campdate"> -->
+            
+            </div>
+
+            
+
+
+
+            <div class="form-group">
+                <label for="inputName">Daily Budget</label>
+                <input class="form-control" type="number" formControlName="dbudget">
+                </div>
+                <div class="form-group">
+                    <label for="inputName">Start Time</label>
+                    <input class="form-control" type="number" formControlName="startTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">End Time</label>
+                        <input class="form-control" type="number" formControlName="endTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName">Daily Impression</label>
+                            <input class="form-control" type="number" formControlName="dimp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputName">Select time zone</label>
+                                <select class="form-control" type="text" formControlName="timeZone">
+                                    <option *ngFor= "let zone of timezonelist" [value]="zone.abbr">{{zone.value + zone.text}} </option> 
+                                    </select>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label for="inputName">Min Bid Price</label>
+                                    <input class="form-control" type="number" formControlName="minbid">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputName">Select Currency</label>
+                                        <select class="form-control" type="text" formControlName="currency">
+                                            <option> </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputName">Max Bid Price</label>
+                                            <input class="form-control" type="number" formControlName="maxbid">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputName">Total budget</label>
+                                                <input class="form-control" type="number" formControlName="tbudget">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputName">Pmp Id</label>
+                                                    <input class="form-control" type="number" formControlName="pmpid">
+                                                    </div>
+                                                    <div class="col-12 h6 text-left form-setting-title">
+                                                        Traffic Filters
+                                                      </div> 
+                                                      <div class="row">
+                                                        <div class="col-md-6 col-xs-6 heading_multi">Platform</div>
+                                                        <select  placeholder="No trafficSource selected"
+          
+                                                        formControlName="trafficSource">
+                                                      </select>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-6">
+                                                        
+                                                          <input  matInput type="number" min="1" placeholder="Frequency Cap" formControlName="frequency">
+                                                      
+                                                      </div>
+
+                                                      <div class="col-md-6 col-xs-6">
+                                                       
+                                                          <select required formControlName="optimizeBy" placeholder="Select Optimize By">
+                                                            <!-- <mat-option value="" selected>Select Optimize By</mat-option> -->
+                                                            <option value="ALL">Default</option>
+                                                            <option value="Click">Click</option>
+                                                            <option value="CTR">CTR</option>
+                                                            <option value="CPM">CPM</option>
+                                                          </select>
+                                                       
+                                                      </div>
+                                                      <button type="submit" class="formBtn" >Submit</button>
+                                                      
+      
+</form>
